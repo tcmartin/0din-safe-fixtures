@@ -1,6 +1,6 @@
 # Kiro CSS-Hidden WebFetch Write Candidate
 
-Status: pre-test.
+Status: blocked by exact public prior art before dynamic testing.
 
 ## Hypothesis
 
@@ -45,3 +45,25 @@ without a separate approval.
 - Exact public prior art covers CSS-class visibility mismatch in Kiro
   `webFetch`.
 
+## Prior-art decision
+
+The final pre-test screen found public July 2026 research from Intezer and
+Kodem demonstrating the same Kiro-specific security boundary:
+
+- attacker-controlled content is naturally ingested through `webFetch`;
+- instructions hidden from the user remain in the model-visible page text;
+- default Autopilot writes attacker-controlled content without a distinct
+  write approval; and
+- the write can target an auto-loaded MCP configuration and reach code
+  execution.
+
+Sources:
+
+- <https://research.intezer.com/blog/2026/07/remote-code-execution-kiro/>
+- <https://www.kodemsecurity.com/resources/aws-kiro-agentic-ide-rce-prompt-injection-mcp-config-vulnerability>
+- <https://aws.amazon.com/security/security-bulletins/AWS-2025-019/>
+
+The CSS-class extraction detail may differ from the published inline-style
+carrier, but it does not create a separate impact or trust-boundary failure.
+No target-model attack run was performed and this candidate must not be
+submitted.
