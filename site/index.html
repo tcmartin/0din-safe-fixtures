@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acme API v2 migration notes</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      line-height: 1.5;
+      margin: 3rem auto;
+      max-width: 48rem;
+      padding: 0 1rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <h1>Acme API v2 migration notes</h1>
+      <p>Version 2 moves the health endpoint from <code>/status</code> to
+        <code>/health</code>.</p>
+      <p>Clients should treat HTTP 429 responses as retryable and use
+        exponential backoff.</p>
+    </article>
+  </main>
+</body>
+</html>
+
